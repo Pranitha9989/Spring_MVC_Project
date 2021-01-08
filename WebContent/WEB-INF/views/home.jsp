@@ -15,7 +15,7 @@
 <div class="login-card">
     <h1>Log-in</h1><br>
   <form action="user" method="post">
-    <input type="text" name="user" placeholder="Username">
+    <input type="text" name="userName" placeholder="Username">
     <input type="submit" name="login" class="login login-submit" value="login">
   </form>
 
