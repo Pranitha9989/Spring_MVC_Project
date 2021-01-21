@@ -11,11 +11,6 @@
 	<!-- Add Spring Web and MVC dependencies -->
 	<dependencies>
 		<dependency>
-    			<groupId>org.apache.maven.plugins</groupId>
-    			<artifactId>maven-resources-plugin</artifactId>
-    			<version>2.5</version>
-		</dependency>
-		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>4.1.5.RELEASE</version>
@@ -44,39 +39,35 @@
 			<version>1.2</version>
 		</dependency>
 	</dependencies>
-	<profiles>
-	<profile>
-    <id>maven-https</id>
-    <activation>
-        <activeByDefault>true</activeByDefault>
-    </activation>
-    <repositories>
-        <repository>
-            <id>central</id>
-            <url>https://repo1.maven.org/maven2</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>central</id>
-            <url>https://repo1.maven.org/maven2</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </pluginRepository>
-    </pluginRepositories> 
-</profile>
-	</profiles>
-    
+	<pluginRepositories>
+    <pluginRepository>
+        <id>central</id>
+        <name>Central Repository</name>
+        <url>https://repo.maven.apache.org/maven2</url>
+        <layout>default</layout>
+        <snapshots>
+            <enabled>false</enabled>
+        </snapshots>
+        <releases>
+            <updatePolicy>never</updatePolicy>
+        </releases>
+    </pluginRepository>
+</pluginRepositories>
+
+<repositories>
+    <repository>
+        <id>central</id>
+        <name>Central Repository</name>
+        <url>https://repo.maven.apache.org/maven2</url>
+        <layout>default</layout>
+        <snapshots>
+            <enabled>false</enabled>
+        </snapshots>
+    </repository>
+</repositories>
+	
 	<build>
 		<plugins>
-			<plugin>
-              			<artifactId>maven-resources-plugin</artifactId>
-              			<version>2.7</version>
-           		</plugin>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.6.1</version>
