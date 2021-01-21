@@ -44,32 +44,32 @@
 			<version>1.2</version>
 		</dependency>
 	</dependencies>
-	<pluginRepositories>
-        <pluginRepository>
-            <id>central</id>
-            <name>Central Repository</name>
-            <url>https://repo.maven.apache.org/maven2</url>
-            <layout>default</layout>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <releases>
-                <updatePolicy>never</updatePolicy>
-            </releases>
-        </pluginRepository>
-    </pluginRepositories>
-    
+	<profiles>
+	<profile>
+    <id>maven-https</id>
+    <activation>
+        <activeByDefault>true</activeByDefault>
+    </activation>
     <repositories>
         <repository>
             <id>central</id>
-            <name>Central Repository</name>
-            <url>https://repo.maven.apache.org/maven2</url>
-            <layout>default</layout>
+            <url>https://repo1.maven.org/maven2</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
         </repository>
     </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>central</id>
+            <url>https://repo1.maven.org/maven2</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories> 
+</profile>
+	</profiles>
     
 	<build>
 		<plugins>
